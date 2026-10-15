@@ -29,6 +29,8 @@ public class TvCharacter {
 
     private String role;
 
+    private String species;
+
     public TvCharacter() {
     }
 
@@ -70,5 +72,13 @@ public class TvCharacter {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
     }
 }
