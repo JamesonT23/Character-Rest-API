@@ -1,6 +1,6 @@
+
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,29 +15,18 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
 
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 Character Gallery
             </a>
 
             <div class="navbar-nav">
-                <a class="nav-link active" href="index.html">Home</a>
-
-                <a class="nav-link" href="details.html">
-                    Details
-                </a>
-
-                <a class="nav-link" href="about.html">
-                    About
-                </a>
-
-                <a class="nav-link" href="new-character-form.html">
-                    Add a Character
-                </a>
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/about">About</a>
+                <a class="nav-link" href="/characters/new">Add a Character</a>
             </div>
 
         </div>
     </nav>
-
 
     <div class="container py-5">
 
@@ -47,231 +36,139 @@
             Explore some of the most iconic fictional characters.
         </p>
 
+        <!-- Search and universe filter -->
+        <form action="/" method="get" class="mb-5">
 
-        <div class="mb-5">
+            <div class="row g-3">
 
-            <label for="character-search">
-                Search Characters
-            </label>
+                <div class="col-md-6">
+                    <label for="name" class="form-label">
+                        Search Characters
+                    </label>
 
-            <input type="text" id="character-search" class="form-control" placeholder="Search by name or category">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form-control"
+                        placeholder="Search by character name"
+                        value="${name!''}">
+                </div>
 
-        </div>
+                <div class="col-md-4">
+                    <label for="universe" class="form-label">
+                        Filter by Universe
+                    </label>
 
+                    <select id="universe" name="universe" class="form-select">
 
+                        <option value="">All Universes</option>
+
+                        <#list universes as item>
+                            <option value="${item}"
+                                <#if universe?? && universe == item>selected</#if>>
+                                ${item}
+                            </option>
+                        </#list>
+
+                    </select>
+                </div>
+
+                <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">
+                        Search
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="mt-2">
+                <a href="/" class="btn btn-outline-secondary btn-sm">
+                    Clear Search
+                </a>
+            </div>
+
+        </form>
+
+        <!-- Character gallery -->
         <div class="row g-4">
 
+            <#list characters as character>
 
-            <div class="col-md-6 col-lg-4">
+                <div class="col-md-6 col-lg-4">
 
-                <div class="card h-100">
+                    <div class="card h-100">
 
-                    <img src="SpidermanIndex.jpg" class="card-img-top" alt="Spider-Man">
+                        <#if character.imageUrl?? && character.imageUrl?has_content>
+                            <img
+                                src="${character.imageUrl}"
+                                class="card-img-top"
+                                alt="${character.name}"
+                                style="height: 250px; object-fit: contain;">
+                        <#else>
+                            <div class="bg-light text-center p-5">
+                                <p class="text-muted">No image available</p>
+                            </div>
+                        </#if>
 
-                    <div class="card-body">
+                        <div class="card-body">
 
-                        <h2 class="card-title">
-                            Spider-Man
-                        </h2>
+                            <h2 class="card-title">
+                                ${character.name}
+                            </h2>
 
-                        <p>
-                            <strong>Universe:</strong> Marvel
-                        </p>
+                            <p>
+                                <strong>Universe:</strong>
+                                ${character.universe! 'Unknown'}
+                            </p>
 
-                        <p>
-                            <strong>Role:</strong> Superhero
-                        </p>
+                            <p>
+                                <strong>Role:</strong>
+                                ${character.role! 'Unknown'}
+                            </p>
 
-                        <p>
-                            <strong>Species:</strong> Human
-                        </p>
+                            <p>
+                                <strong>Species:</strong>
+                                ${character.species! 'Unknown'}
+                            </p>
 
-                        <p class="card-text">
-                            Spider-Man is a superhero who uses his
-                            spider-like abilities to protect people
-                            and fight crime.
-                        </p>
+                            <p class="card-text">
+                                ${character.description}
+                            </p>
 
-                        <a href="details.html" class="btn btn-primary">
-                            View Details
-                        </a>
+                            <a href="/characters/${character.characterId?c}"
+                               class="btn btn-primary">
+                                View Details
+                            </a>
 
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="card h-100">
-
-                    <img src="Batman.jpg" class="card-img-top" alt="Batman">
-
-                    <div class="card-body">
-
-                        <h2 class="card-title">
-                            Batman
-                        </h2>
-
-                        <p>
-                            <strong>Universe:</strong> DC
-                        </p>
-
-                        <p>
-                            <strong>Role:</strong> Superhero
-                        </p>
-
-                        <p>
-                            <strong>Species:</strong> Human
-                        </p>
-
-                        <p class="card-text">
-                            Batman is a crime-fighting hero from
-                            Gotham City who relies on intelligence,
-                            technology, and combat skills.
-                        </p>
-
-                        <a href="details.html" class="btn btn-primary">
-                            View Details
-                        </a>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+            <#else>
 
+                <div class="col-12 text-center py-5">
 
-            <div class="col-md-6 col-lg-4">
+                    <h3>No Characters Found</h3>
 
-                <div class="card h-100">
+                    <p>
+                        No characters matched your search.
+                        Try another name or universe.
+                    </p>
 
-                    <img src="Raph.jpg" class="card-img-top" alt="Raph">
-
-                    <div class="card-body">
-
-                        <h2 class="card-title">
-                            Raphael
-                        </h2>
-
-                        <p>
-                            <strong>Universe:</strong> TMNT
-                        </p>
-
-                        <p>
-                            <strong>Role:</strong> Superhero
-                        </p>
-
-                        <p>
-                            <strong>Species:</strong> Mutant Turtle
-                        </p>
-
-                        <p class="card-text">
-                            Raphael is one of four teenage
-                            mutant turtles, together the
-                            four brothers fight crime.
-                        </p>
-
-                        <a href="details.html" class="btn btn-primary">
-                            View Details
-                        </a>
-
-                    </div>
+                    <a href="/" class="btn btn-primary">
+                        View All Characters
+                    </a>
 
                 </div>
 
-            </div>
-
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="card h-100">
-
-                    <img src="winton.jpg" class="card-img-top" alt="Winston">
-
-                    <div class="card-body">
-
-                        <h2 class="card-title">
-                            Winston
-                        </h2>
-
-                        <p>
-                            <strong>Universe:</strong>
-                            OverWatch
-                        </p>
-
-                        <p>
-                            <strong>Role:</strong> Hero
-                        </p>
-
-                        <p>
-                            <strong>Species:</strong> Gorilla
-                        </p>
-
-                        <p class="card-text">
-                            Winston is part of the team overwatch.
-                        </p>
-
-                        <a href="details.html" class="btn btn-primary">
-                            View Details
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="card h-100">
-
-                    <img src="Vader.jpg" class="card-img-top" alt="Darth Vader">
-
-                    <div class="card-body">
-
-                        <h2 class="card-title">
-                            Darth Vader
-                        </h2>
-
-                        <p>
-                            <strong>Universe:</strong> Star Wars
-                        </p>
-
-                        <p>
-                            <strong>Role:</strong> Sith Lord
-                        </p>
-
-                        <p>
-                            <strong>Species:</strong> Human
-                        </p>
-
-                        <p class="card-text">
-                            Darth Vader is a powerful Force user
-                            who serves the Galactic Empire and is
-                            one of the most recognizable villains
-                            in fiction.
-                        </p>
-
-                        <a href="details.html" class="btn btn-primary">
-                            View Details
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
+            </#list>
 
         </div>
 
     </div>
 
-
 </body>
-
 </html>
