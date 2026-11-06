@@ -1,3 +1,4 @@
+
 package com.example.characterapi.service;
 
 import com.example.characterapi.entity.TvCharacter;
@@ -47,6 +48,7 @@ public class TvCharacterService {
         character.setUniverse(updatedCharacter.getUniverse());
         character.setRole(updatedCharacter.getRole());
         character.setSpecies(updatedCharacter.getSpecies());
+        character.setImageUrl(updatedCharacter.getImageUrl());
 
         return repository.save(character);
     }
