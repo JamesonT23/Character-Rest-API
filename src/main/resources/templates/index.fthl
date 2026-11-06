@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Character Gallery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Character Gallery
+            </a>
+
+            <div class="navbar-nav">
+                <a class="nav-link active" href="index.html">Home</a>
+
+                <a class="nav-link" href="details.html">
+                    Details
+                </a>
+
+                <a class="nav-link" href="about.html">
+                    About
+                </a>
+
+                <a class="nav-link" href="new-character-form.html">
+                    Add a Character
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container py-5">
+
+        <h1 class="text-center">Fictional Character Gallery</h1>
+
+        <p class="text-center">
+            Explore some of the most iconic fictional characters.
+        </p>
+
+
+        <div class="mb-5">
+
+            <label for="character-search">
+                Search Characters
+            </label>
+
+            <input type="text" id="character-search" class="form-control" placeholder="Search by name or category">
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <img src="SpidermanIndex.jpg" class="card-img-top" alt="Spider-Man">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title">
+                            Spider-Man
+                        </h2>
+
+                        <p>
+                            <strong>Universe:</strong> Marvel
+                        </p>
+
+                        <p>
+                            <strong>Role:</strong> Superhero
+                        </p>
+
+                        <p>
+                            <strong>Species:</strong> Human
+                        </p>
+
+                        <p class="card-text">
+                            Spider-Man is a superhero who uses his
+                            spider-like abilities to protect people
+                            and fight crime.
+                        </p>
+
+                        <a href="details.html" class="btn btn-primary">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <img src="Batman.jpg" class="card-img-top" alt="Batman">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title">
+                            Batman
+                        </h2>
+
+                        <p>
+                            <strong>Universe:</strong> DC
+                        </p>
+
+                        <p>
+                            <strong>Role:</strong> Superhero
+                        </p>
+
+                        <p>
+                            <strong>Species:</strong> Human
+                        </p>
+
+                        <p class="card-text">
+                            Batman is a crime-fighting hero from
+                            Gotham City who relies on intelligence,
+                            technology, and combat skills.
+                        </p>
+
+                        <a href="details.html" class="btn btn-primary">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <img src="Raph.jpg" class="card-img-top" alt="Raph">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title">
+                            Raphael
+                        </h2>
+
+                        <p>
+                            <strong>Universe:</strong> TMNT
+                        </p>
+
+                        <p>
+                            <strong>Role:</strong> Superhero
+                        </p>
+
+                        <p>
+                            <strong>Species:</strong> Mutant Turtle
+                        </p>
+
+                        <p class="card-text">
+                            Raphael is one of four teenage
+                            mutant turtles, together the
+                            four brothers fight crime.
+                        </p>
+
+                        <a href="details.html" class="btn btn-primary">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <img src="winton.jpg" class="card-img-top" alt="Winston">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title">
+                            Winston
+                        </h2>
+
+                        <p>
+                            <strong>Universe:</strong>
+                            OverWatch
+                        </p>
+
+                        <p>
+                            <strong>Role:</strong> Hero
+                        </p>
+
+                        <p>
+                            <strong>Species:</strong> Gorilla
+                        </p>
+
+                        <p class="card-text">
+                            Winston is part of the team overwatch.
+                        </p>
+
+                        <a href="details.html" class="btn btn-primary">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-6 col-lg-4">
+
+                <div class="card h-100">
+
+                    <img src="Vader.jpg" class="card-img-top" alt="Darth Vader">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title">
+                            Darth Vader
+                        </h2>
+
+                        <p>
+                            <strong>Universe:</strong> Star Wars
+                        </p>
+
+                        <p>
+                            <strong>Role:</strong> Sith Lord
+                        </p>
+
+                        <p>
+                            <strong>Species:</strong> Human
+                        </p>
+
+                        <p class="card-text">
+                            Darth Vader is a powerful Force user
+                            who serves the Galactic Empire and is
+                            one of the most recognizable villains
+                            in fiction.
+                        </p>
+
+                        <a href="details.html" class="btn btn-primary">
+                            View Details
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

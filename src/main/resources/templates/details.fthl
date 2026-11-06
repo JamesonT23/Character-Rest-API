@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <title>Spider-Man - Character Details</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="index.html">
+                Character Details
+            </a>
+
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="details.html">Details</a>
+                <a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="new-character-form.html">
+                    Add a Character
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container py-5">
+
+        <h1 class="mb-4">Spider-Man</h1>
+
+        <div class="row">
+
+            <div class="col-md-5">
+
+                    <img src="SpidermanDetail.jpg"
+                     class="card-img-top"
+                     alt="Spider-Man">
+
+            </div>
+
+
+            <div class="col-md-7">
+
+                <h2>Character Information</h2>
+
+                <p>
+                    <strong>Name:</strong> Peter Parker
+                </p>
+
+                <p>
+                   <strong>Universe:</strong> Marvel
+                </p>
+
+                <p>
+                    <strong>Role:</strong> Superhero
+                </p>
+
+                <p>
+                    <strong>Alias:</strong> Spider-Man
+                </p>
+
+
+                <h2>Backstory</h2>
+
+                <p>
+                    Peter Parker is a teenager from New York City who gains
+                    spider-like abilities after being bitten by a radioactive
+                    spider. After the death of his Uncle Ben, Peter takes it
+                    upon himself to use his powers to make sure nobody else feels that same pain.
+                </p>
+
+
+                <!-- Abilities -->
+                <h2>Abilities</h2>
+
+                <ul>
+                    <li>Superstrength</li>
+                    <li>Superhuman speed and agility</li>
+                    <li>Wall climbing</li>
+                    <li>Spider-Sense</li>
+                    <li>Web-swinging</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="mt-5">
+
+            <h2>First Appearance</h2>
+
+            <p>
+                Spider-Man first appeared in
+                <strong>Amazing Fantasy #15</strong> in 1962.
+            </p>
+
+
+            <h2>Personality Traits</h2>
+
+            <ul>
+                <li>Friendly</li>
+                <li>Intelligent</li>
+                <li>Brave</li>
+                <li>Responsible</li>
+                <li>Funny</li>
+                <li>Determined</li>
+            </ul>
+
+</body>
+
+</html>
