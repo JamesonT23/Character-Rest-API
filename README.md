@@ -58,7 +58,7 @@ Base path: `/api/characters`
 
 ## Deployed API
 
-[View the Character REST API on Render](https://character-rest-api-n2db.onrender.com/api/characters)
+[View the Character REST API on Render](https://character-rest-api-n2db.onrender.com/)
 
 **Note:** The free Render service sleeps when idle, so the first request after inactivity can take up to a minute to respond.
 
