@@ -2,6 +2,7 @@ package com.example.characterapi.service;
 
 import com.example.characterapi.entity.TvCharacter;
 import com.example.characterapi.repository.TvCharacterRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -15,6 +16,36 @@ public class TvCharacterService {
 
     public TvCharacterService(TvCharacterRepository repository) {
         this.repository = repository;
+    }
+
+    @PostConstruct
+    public void assignDefaultImages() {
+        List<TvCharacter> characters = repository.findAll();
+
+        for (TvCharacter character : characters) {
+            if (character.getImageUrl() == null || character.getImageUrl().isBlank()) {
+
+                switch (character.getName().toLowerCase()) {
+                    case "batman":
+                        character.setImageUrl("/images/Batman.jpg");
+                        break;
+                    case "raphael":
+                        character.setImageUrl("/images/Raph.jpg");
+                        break;
+                    case "winston":
+                        character.setImageUrl("/images/winton.jpg");
+                        break;
+                    case "darth vader":
+                        character.setImageUrl("/images/Vader.jpg");
+                        break;
+                    case "spider-man":
+                        character.setImageUrl("/images/SpidermanIndex.jpg");
+                        break;
+                }
+            }
+        }
+
+        repository.saveAll(characters);
     }
 
     public List<TvCharacter> search(String name, String universe) {
@@ -47,6 +78,7 @@ public class TvCharacterService {
         character.setUniverse(updatedCharacter.getUniverse());
         character.setRole(updatedCharacter.getRole());
         character.setSpecies(updatedCharacter.getSpecies());
+        character.setImageUrl(updatedCharacter.getImageUrl());
 
         return repository.save(character);
     }
